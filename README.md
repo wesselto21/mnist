@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # mnist
 
 
@@ -40,6 +39,3 @@ After finishing a Traning curve will be plotted
     Run dnn.py once to train and save the model
     Run plot.py as many times as you want to test different images
     Change image_index in plot.py to test different images
-
-
->>>>>>> 6ec4fef0de80c7dc886b0a61d33cede05a73c6b3
