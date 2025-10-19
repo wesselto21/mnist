@@ -1,41 +1,107 @@
-# mnist
+# 🧠 MNIST Neural Network  
 
+A simple **Deep Neural Network (DNN)** built from scratch to classify handwritten digits from the **MNIST dataset**.  
 
-1. Download Datset via terminal cmd
+---
 
-MAC:
+## 📦 Setup  
+
+### 1. Download the MNIST Dataset  
+Use the following commands in your terminal (macOS):  
+
+```bash
 curl -O https://storage.googleapis.com/cvdf-datasets/mnist/train-images-idx3-ubyte.gz
 curl -O https://storage.googleapis.com/cvdf-datasets/mnist/train-labels-idx1-ubyte.gz
 curl -O https://storage.googleapis.com/cvdf-datasets/mnist/t10k-images-idx3-ubyte.gz
 curl -O https://storage.googleapis.com/cvdf-datasets/mnist/t10k-labels-idx1-ubyte.gz
+```
 
-2. Unzip the files via terminal cmd
+### 2. Unzip the Files  
 
+```bash
 gunzip train-images-idx3-ubyte.gz
 gunzip train-labels-idx1-ubyte.gz
 gunzip t10k-images-idx3-ubyte.gz
 gunzip t10k-labels-idx1-ubyte.gz
+```
 
-3. Run dataset.py to convert into csv format
+### 3. Convert Dataset to CSV  
+Run the following script to convert the binary MNIST files into CSV format:  
 
-4. Run plot.py for graphical output
+```bash
+python dataset.py
+```
 
+---
 
-Deep Neural Network Architecture in dnn.py
+## 📊 Visualization  
 
-Input Layer: 784 Nodes
+Run the plotting script to visualize example digits from the dataset:  
 
-First Hidden Layer: 128 Nodes
+```bash
+python plot.py
+```
 
-Second Hidden Layer: 64 Nodes
+---
 
-Output Layer: 10 Nodes (Numbers 0 to 9)
+## 🧩 Deep Neural Network Architecture (`dnn.py`)  
 
-5. Run dnn.py to train the Neural Network
+| Layer              | Nodes | Description |
+|--------------------|--------|--------------|
+| Input Layer        | 784    | Flattened 28×28 pixel images |
+| Hidden Layer 1     | 128    | ReLU activation |
+| Hidden Layer 2     | 64     | ReLU activation |
+| Output Layer       | 10     | Softmax output (digits 0–9) |
 
-After finishing a Traning curve will be plotted
+---
 
-6. Test Trained Model in test.py:
-    Run dnn.py once to train and save the model
-    Run plot.py as many times as you want to test different images
-    Change image_index in plot.py to test different images
+## 🚀 Training  
+
+Train the neural network by running:  
+
+```bash
+python dnn.py
+```
+
+After training, a **training curve** will be plotted automatically showing loss and accuracy progression.
+
+---
+
+## 🧪 Testing  
+
+Once your model is trained and saved, you can test it on individual images:  
+
+```bash
+python test.py
+```
+
+Or visualize predictions interactively:  
+
+```bash
+python plot.py
+```
+
+> 💡 Tip: Change the `image_index` variable inside `plot.py` to test different images from the dataset.
+
+---
+
+## 🧰 Requirements  
+
+- Python 3.x  
+- NumPy  
+- Matplotlib  
+
+---
+
+## 📚 Description  
+
+This project demonstrates a minimal implementation of a **feedforward deep neural network** trained on the **MNIST handwritten digit dataset** using only **NumPy** — no deep learning frameworks required.  
+
+It’s designed for educational purposes to help understand:  
+- How data flows through layers  
+- How forward and backward propagation work  
+- How gradient descent updates weights  
+- How to visualize model performance  
+
+---
+
